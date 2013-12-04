@@ -149,7 +149,7 @@ public abstract class SASLMechanism implements CallbackHandler {
         String[] mechanisms = { getName() };
         Map<String,String> props = new HashMap<String,String>();        
         sc = Sasl.createSaslClient(mechanisms, username, "xmpp", serviceName, props, this);
-        authenticate();
+        authenticate(username, host, password);
     }
 
     /**
